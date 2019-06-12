@@ -25,12 +25,13 @@ SECRET_KEY = "bx9d)qnb*=rn3upoam_u6bb-lh-)zoajni2*=gh_7)==gcwm2h"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "sendemail.apps.SendemailConfig", # new
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     "marketing",
     "posts",
     "users",
+
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -169,5 +171,8 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 SITE_ID = 1

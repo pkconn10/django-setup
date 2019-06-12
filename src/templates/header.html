@@ -56,7 +56,7 @@
           <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
           <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
           <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-          <li class="nav-item"><a href="#" class="nav-link ">Contact</a></li>
+          <li class="nav-item"><a href="{% url 'email' %}" class="nav-link ">Contact</a></li>
            
          
           {% if request.user.is_staff %}
